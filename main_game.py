@@ -2,7 +2,12 @@
 TIC TAC TOE - William Neves Version
 
 font of resource: https://www.techwithtim.net/tutorials/python-programming/tic-tac-toe-tutorial/
+
+Version 1.0
+
 '''
+version = "1.0.0b"
+
 board = [' ' for x in range(10)]
 
 def printBoard(board):
@@ -12,6 +17,7 @@ def printBoard(board):
     print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
     print('-----------')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print('')
 
 def boardIsFull(board):
     if board.count(" ") > 1:
@@ -41,7 +47,7 @@ def playerXMove():
     play = True
 
     while play:
-        move = input("Enter: ")
+        move = input("Player X - Enter the number: ")
         try:
             move = int(move)
             if move > 0 and move <10:
@@ -59,7 +65,7 @@ def playerOMove():
     play = True
 
     while play:
-        move = input("Enter: ")
+        move = input("Player O - Enter the number: ")
         try:
             move = int(move)
             if move > 0 and move <10:
@@ -74,7 +80,21 @@ def playerOMove():
             print("Type a number between 1-9")
 
 def main():
-    print("Welcome to Tic-Tac-Toe")
+    print("****************************************************")
+    print(f"Welcome to Tic-Tac-Toe - Version {version}\n")
+    print('''To play the game, the player needs to enter a number
+in the console. The position numbers is like:\n
+ 7|8|9
+-------
+ 4|5|6
+-------
+ 1|2|3\n''')
+    print("****************************************************")
+    print(f"Let's play!!!\n")
+
+    
+    
+    
     printBoard(board)
 
 
