@@ -6,17 +6,19 @@ font of resource: https://www.techwithtim.net/tutorials/python-programming/tic-t
 Version 1.0
 
 '''
+import time
+
 version = "1.0.0b"
 
 board = [' ' for x in range(10)]
 
 def printBoard(board):
     # "board" is a list of 10 strings representing the board (ignore index 0)
-    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('-----------')
     print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
     print('-----------')
-    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('')
 
 def boardIsFull(board):
@@ -82,35 +84,42 @@ def playerOMove():
 def main():
     print("****************************************************")
     print(f"Welcome to Tic-Tac-Toe - Version {version}\n")
+    time.sleep(.4)
     print('''To play the game, the player needs to enter a number
 in the console. The position numbers is like:\n
- 7|8|9
--------
- 4|5|6
--------
- 1|2|3\n''')
-    print("****************************************************")
+ 7 | 8 | 9
+-----------
+ 4 | 5 | 6
+-----------
+ 1 | 2 |3\n''')
+    print("****************************************************\n")
     print(f"Let's play!!!\n")
-
-    
-    
-    
+    time.sleep(.4)
     printBoard(board)
 
 
-    while not(boardIsFull(board)):
+    while not (boardIsFull(board)):
         if not isWinner(board, "O"):
             playerXMove()
+            print("")
             printBoard(board)
-            
+            time.sleep(.3)
+        
         else:
             print("O win this time...")
             break
 
+        if boardIsFull(board) == True: # Check if board is full before next player time
+            break
+        else:
+            pass
+
         if not isWinner(board, "X"):
             playerOMove()
+            print("")
             printBoard(board)
-            
+            time.sleep(.3)
+        
         else:
             print("X win this time...")
             break
@@ -122,9 +131,11 @@ in the console. The position numbers is like:\n
 main()
 
 while True:
+    time.sleep(.4)
     answer = input('Do you want to play again? (Y/N)')
     if answer.lower() == 'y' or answer.lower == 'yes':
         board = [' ' for x in range(10)]
+        time.sleep(.3)
         print('-----------------------------------')
         main()
     else:
