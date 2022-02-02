@@ -87,11 +87,11 @@ def main():
     time.sleep(.4)
     print('''To play the game, the player needs to enter a number
 in the console. The position numbers is like:\n
- 7 | 8 | 9
+ 1 | 2 | 3
 -----------
  4 | 5 | 6
 -----------
- 1 | 2 |3\n''')
+ 7 | 8 | 9\n''')
     print("****************************************************\n")
     print(f"Let's play!!!\n")
     time.sleep(.4)
